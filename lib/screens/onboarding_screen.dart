@@ -40,11 +40,26 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               const SizedBox(height: 48),
               
               // Dropdowns will go here
-              _buildDropdown("Origin", ["Italy", "Spain"], (v) => setState(() => origin = v)),
+              _buildDropdown(
+                "Origin",
+                ["Italy", "Spain"],
+                origin,
+                (v) => setState(() => origin = v),
+              ),
               const SizedBox(height: 16),
-              _buildDropdown("Moving to", ["Poland"], (v) => setState(() => destination = v)),
+              _buildDropdown(
+                "Moving to",
+                ["Poland"],
+                destination,
+                (v) => setState(() => destination = v),
+              ),
               const SizedBox(height: 16),
-              _buildDropdown("City", ["Wrocław", "Warsaw"], (v) => setState(() => city = v)),
+              _buildDropdown(
+                "City",
+                ["Wrocław", "Warsaw"],
+                city,
+                (v) => setState(() => city = v),
+              ),
 
               const Spacer(),
               ElevatedButton(
@@ -75,13 +90,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 
-  Widget _buildDropdown(String label, List<String> items, Function(String?) onChanged) {
+  Widget _buildDropdown(
+    String label,
+    List<String> items,
+    String? value,
+    Function(String?) onChanged,
+  ) {
     return DropdownButtonFormField<String>(
       decoration: InputDecoration(
         labelText: label,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
       ),
-      value: items.first,
+      value: value,
       items: items.map((e) => DropdownMenuItem(value: e, child: Text(e))).toList(),
       onChanged: onChanged,
     );
