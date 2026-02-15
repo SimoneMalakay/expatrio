@@ -1,0 +1,38 @@
+{
+    "country_id": "ES",
+    "exit_steps": [
+        {
+            "step_id": "es_exit_pere",
+            "title": "Registro PERE (Padrón de Españoles Residentes en el Extranjero)",
+            "deadline": "Upon establishing residence in Poland",
+            "authority": "Spanish Consulate",
+            "requirements": [
+                "Solicitud de inscripción (PERE)",
+                "Passport or DNI",
+                "Proof of residence in Poland (Meldunek or rental contract)",
+                "One passport-sized photo"
+            ],
+            "outcome": "Registration as an overseas resident, enabling consular voting and tax status updates.",
+            "dependencies": [],
+            "xp": 100,
+            "estimated_time_days": 1,
+            "notes": "Ensures you maintain your Spanish rights and correctly identifies your tax residence."
+        },
+        {
+            "step_id": "es_exit_modelo030",
+            "title": "Tax Residence Notification (Modelo 030)",
+            "deadline": "Within one month of change in residence",
+            "authority": "Agencia Tributaria",
+            "requirements": [
+                "Modelo 030 form"
+            ],
+            "outcome": "Notification to Hacienda of your move to avoid double taxation.",
+            "dependencies": [
+                "es_exit_pere"
+            ],
+            "xp": 50,
+            "estimated_time_days": 1,
+            "notes": "Prevents being taxed as a Spanish resident on your foreign income."
+        }
+    ]
+}

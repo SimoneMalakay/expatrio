@@ -1,0 +1,36 @@
+{
+    "country_id": "IE",
+    "exit_steps": [
+        {
+            "step_id": "ie_exit_revenue",
+            "title": "Revenue Notification (Ceasing Employment)",
+            "deadline": "Upon leaving your Irish job",
+            "authority": "Revenue Commissioners",
+            "requirements": [
+                "Cessation of employment notification from employer"
+            ],
+            "outcome": "Update of tax record",
+            "dependencies": [],
+            "xp": 50,
+            "estimated_time_days": 1,
+            "notes": "Ensure your employer registers your leave correctly on the Revenue system."
+        },
+        {
+            "step_id": "ie_exit_claim_tax",
+            "title": "Claim Tax Refund (Form P50)",
+            "deadline": null,
+            "authority": "Revenue Commissioners",
+            "requirements": [
+                "Form P50",
+                "Statement of Liability"
+            ],
+            "outcome": "Potential tax refund for the current year",
+            "dependencies": [
+                "ie_exit_revenue"
+            ],
+            "xp": 50,
+            "estimated_time_days": 30,
+            "notes": "Useful if you are leaving mid-year and will not be working in Ireland for the rest of the year."
+        }
+    ]
+}

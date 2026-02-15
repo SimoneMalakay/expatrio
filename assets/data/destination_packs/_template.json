@@ -1,0 +1,127 @@
+{
+    "_comment_header": "This is a template for a Destination Pack. Rename this file to [country_id].json to use it.",
+    "country_id": "XX",
+    "duration": "more_than_90_days",
+    "_comment_common": "Steps applicable to ALL EU/EEA/CH/UK citizens regardless of their legal basis for stay.",
+    "common_steps": [
+        {
+            "step_id": "xx_common_example",
+            "title": "Example Common Step",
+            "deadline": "30 days after arrival",
+            "authority": "Local Registration Office",
+            "requirements": [
+                "Passport or ID",
+                "Proof of address"
+            ],
+            "outcome": "Registration Certificate",
+            "dependencies": [],
+            "xp": 50,
+            "estimated_time_days": 1,
+            "notes": "Ensure all documents are translated if required."
+        }
+    ],
+    "_comment_bases": "Requirement segments specific to the legal grounds of the stay.",
+    "residency_bases": {
+        "employment": {
+            "basis_label": "Employment",
+            "basis_steps": [
+                {
+                    "step_id": "xx_basis_work_permit",
+                    "title": "Work Permit / Contract Validation",
+                    "deadline": null,
+                    "authority": "Labor Ministry",
+                    "requirements": [
+                        "Signed employment contract"
+                    ],
+                    "outcome": "Validated Employment Status",
+                    "dependencies": [
+                        "xx_common_example"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 14,
+                    "notes": "Verify your salary meets the minimum requirement for residency."
+                }
+            ]
+        },
+        "self_employed": {
+            "basis_label": "Self-Employed / Business",
+            "basis_steps": [
+                {
+                    "step_id": "xx_basis_business_reg",
+                    "title": "Local Business Registration",
+                    "deadline": null,
+                    "authority": "Trade Registry",
+                    "requirements": [
+                        "Proof of business activity",
+                        "Tax ID"
+                    ],
+                    "outcome": "Commercial Registration Number",
+                    "dependencies": [],
+                    "xp": 150,
+                    "estimated_time_days": 30,
+                    "notes": "Consult with a tax advisor first."
+                }
+            ]
+        },
+        "student": {
+            "basis_label": "Student",
+            "basis_steps": [
+                {
+                    "step_id": "xx_basis_uni_enrollment",
+                    "title": "University Enrollment Confirmation",
+                    "deadline": null,
+                    "authority": "Educational Institution",
+                    "requirements": [
+                        "Letter of acceptance",
+                        "Proof of tuition payment"
+                    ],
+                    "outcome": "Student Status Confirmation",
+                    "dependencies": [],
+                    "xp": 80,
+                    "estimated_time_days": 7,
+                    "notes": null
+                }
+            ]
+        },
+        "sufficient_resources": {
+            "basis_label": "Sufficient Resources / Retiree",
+            "basis_steps": [
+                {
+                    "step_id": "xx_basis_financial_proof",
+                    "title": "Proof of Financial Independence",
+                    "deadline": null,
+                    "authority": "Immigration Authority",
+                    "requirements": [
+                        "Bank statements (last 6 months)",
+                        "Comprehensive health insurance"
+                    ],
+                    "outcome": "Financial Eligibility Certificate",
+                    "dependencies": [],
+                    "xp": 120,
+                    "estimated_time_days": 10,
+                    "notes": "Health insurance must cover all risks normally covered for nationals."
+                }
+            ]
+        },
+        "family": {
+            "basis_label": "Family Member",
+            "basis_steps": [
+                {
+                    "step_id": "xx_basis_family_proof",
+                    "title": "Proof of Family Relationship",
+                    "deadline": null,
+                    "authority": "Civil Registry",
+                    "requirements": [
+                        "Marriage or birth certificate",
+                        "Relative's ID"
+                    ],
+                    "outcome": "Family Resident Document",
+                    "dependencies": [],
+                    "xp": 100,
+                    "estimated_time_days": 21,
+                    "notes": "Non-EU documents may require an Apostille."
+                }
+            ]
+        }
+    }
+}

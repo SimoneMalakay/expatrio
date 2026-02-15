@@ -1,0 +1,184 @@
+{
+    "country_id": "NL",
+    "duration": "more_than_90_days",
+    "common_steps": [
+        {
+            "step_id": "nl_enter_id",
+            "title": "Enter the Netherlands with Valid ID",
+            "deadline": null,
+            "authority": "Royal Marechaussee",
+            "requirements": [
+                "Valid EU/EEA/CH Passport or National ID card"
+            ],
+            "outcome": "Legal entry into the Netherlands",
+            "dependencies": [],
+            "xp": 10,
+            "estimated_time_days": 0,
+            "notes": null
+        },
+        {
+            "step_id": "nl_bsn",
+            "title": "Address Registration and BSN",
+            "deadline": "5 days after arrival",
+            "authority": "Municipality (Gemeente)",
+            "requirements": [
+                "Passport / ID",
+                "Original birth certificate (legalized/apostilled)",
+                "Rental contract (huurovereenkomst)"
+            ],
+            "outcome": "Registered address and BSN Number",
+            "dependencies": [
+                "nl_enter_id"
+            ],
+            "xp": 80,
+            "estimated_time_days": 1,
+            "notes": "The BSN (Burger-servicenummer) is your unique identification number."
+        },
+        {
+            "step_id": "nl_digid",
+            "title": "Request DigiD",
+            "deadline": null,
+            "authority": "DigiD.nl",
+            "requirements": [
+                "BSN number"
+            ],
+            "outcome": "Digital ID for government services",
+            "dependencies": [
+                "nl_bsn"
+            ],
+            "xp": 20,
+            "estimated_time_days": 5,
+            "notes": "Sent via post to your registered address."
+        },
+        {
+            "step_id": "nl_health_insurance",
+            "title": "Mandatory Health Insurance (Zorgverzekering)",
+            "deadline": "4 months after arrival",
+            "authority": "Insurance provider of choice",
+            "requirements": [
+                "BSN number",
+                "Dutch bank account"
+            ],
+            "outcome": "Proof of health insurance",
+            "dependencies": [
+                "nl_bsn"
+            ],
+            "xp": 50,
+            "estimated_time_days": 1,
+            "notes": "Required even if you have insurance in your home country."
+        }
+    ],
+    "residency_bases": {
+        "employment": {
+            "basis_label": "Employment",
+            "basis_steps": [
+                {
+                    "step_id": "nl_basis_employment",
+                    "title": "Employment Contract Verification",
+                    "deadline": null,
+                    "authority": "Employer / UWV",
+                    "requirements": [
+                        "Signed employment contract"
+                    ],
+                    "outcome": "Employment-based residence right",
+                    "dependencies": [
+                        "nl_bsn"
+                    ],
+                    "xp": 50,
+                    "estimated_time_days": 1,
+                    "notes": null
+                }
+            ]
+        },
+        "self_employed": {
+            "basis_label": "Self-Employed (ZZP)",
+            "basis_steps": [
+                {
+                    "step_id": "nl_basis_kvk",
+                    "title": "Chamber of Commerce Registry (KvK)",
+                    "deadline": null,
+                    "authority": "Kamer van Koophandel (KvK)",
+                    "requirements": [
+                        "ID/Passport",
+                        "Business address",
+                        "Fee (€75)"
+                    ],
+                    "outcome": "KvK Number",
+                    "dependencies": [
+                        "nl_bsn"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 1,
+                    "notes": "Mandatory for all business owners."
+                }
+            ]
+        },
+        "student": {
+            "basis_label": "Student",
+            "basis_steps": [
+                {
+                    "step_id": "nl_basis_student",
+                    "title": "Educational Enrollment",
+                    "deadline": null,
+                    "authority": "University / DUO",
+                    "requirements": [
+                        "Proof of enrollment at Dutch educational institution",
+                        "Health insurance",
+                        "Financial means proof"
+                    ],
+                    "outcome": "Student residence validation",
+                    "dependencies": [
+                        "nl_bsn"
+                    ],
+                    "xp": 80,
+                    "estimated_time_days": 1,
+                    "notes": null
+                }
+            ]
+        },
+        "sufficient_resources": {
+            "basis_label": "Sufficient Resources",
+            "basis_steps": [
+                {
+                    "step_id": "nl_basis_resources",
+                    "title": "Economically Inactive Declaration",
+                    "deadline": null,
+                    "authority": "IND (Immigratie en Naturalisatiedienst)",
+                    "requirements": [
+                        "Sufficient resources proof (bank statements)",
+                        "Health insurance"
+                    ],
+                    "outcome": "Residence right validation",
+                    "dependencies": [
+                        "nl_bsn"
+                    ],
+                    "xp": 80,
+                    "estimated_time_days": 1,
+                    "notes": "Registration with IND is optional but recommended."
+                }
+            ]
+        },
+        "family": {
+            "basis_label": "Family Member",
+            "basis_steps": [
+                {
+                    "step_id": "nl_basis_family",
+                    "title": "Family Relation Documentation",
+                    "deadline": null,
+                    "authority": "Gemeente / IND",
+                    "requirements": [
+                        "Legalized marriage or partnership certificate",
+                        "Proof of common residency"
+                    ],
+                    "outcome": "Family residence validation",
+                    "dependencies": [
+                        "nl_bsn"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 14,
+                    "notes": null
+                }
+            ]
+        }
+    }
+}

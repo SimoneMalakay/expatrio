@@ -1,0 +1,184 @@
+{
+    "country_id": "DE",
+    "duration": "more_than_90_days",
+    "common_steps": [
+        {
+            "step_id": "de_enter_id",
+            "title": "Enter Germany with Valid ID",
+            "deadline": null,
+            "authority": "Federal Police (Bundespolizei)",
+            "requirements": [
+                "Valid EU/EEA/CH Passport or National ID card"
+            ],
+            "outcome": "Legal entry into Germany",
+            "dependencies": [],
+            "xp": 10,
+            "estimated_time_days": 0,
+            "notes": null
+        },
+        {
+            "step_id": "de_address_reg",
+            "title": "Address Registration (Anmeldung)",
+            "deadline": "14 days after moving in",
+            "authority": "Citizens' Office (Bürgeramt)",
+            "requirements": [
+                "Valid ID card or Passport",
+                "Wohnungsgeberbestätigung (Landlord confirmation form)",
+                "Application form"
+            ],
+            "outcome": "Registration Certificate (Meldebescheinigung)",
+            "dependencies": [
+                "de_enter_id"
+            ],
+            "xp": 30,
+            "estimated_time_days": 1,
+            "notes": "Essential for opening a bank account or getting a mobile contract."
+        },
+        {
+            "step_id": "de_tax_id",
+            "title": "Obtain Tax ID (Steueridentifikationsnummer)",
+            "deadline": null,
+            "authority": "Federal Central Tax Office (BZSt)",
+            "requirements": [
+                "Completion of address registration (Anmeldung)"
+            ],
+            "outcome": "Tax ID arrival by post",
+            "dependencies": [
+                "de_address_reg"
+            ],
+            "xp": 20,
+            "estimated_time_days": 14,
+            "notes": "Sent automatically to your registered address within 2-3 weeks of Anmeldung."
+        },
+        {
+            "step_id": "de_health_insurance",
+            "title": "Register with Health Insurance (Krankenkasse)",
+            "deadline": null,
+            "authority": "Krankenkasse of choice",
+            "requirements": [
+                "Valid ID",
+                "Employment contract or proof of status"
+            ],
+            "outcome": "Insurance Certificate (Mitgliedsbescheinigung)",
+            "dependencies": [
+                "de_address_reg"
+            ],
+            "xp": 40,
+            "estimated_time_days": 7,
+            "notes": "Mandatory for all residents in Germany."
+        }
+    ],
+    "residency_bases": {
+        "employment": {
+            "basis_label": "Employment",
+            "basis_steps": [
+                {
+                    "step_id": "de_basis_employment",
+                    "title": "Employment Documentation",
+                    "deadline": null,
+                    "authority": "Employer / Health Insurance",
+                    "requirements": [
+                        "Signed employment contract"
+                    ],
+                    "outcome": "Social security registration",
+                    "dependencies": [
+                        "de_health_insurance"
+                    ],
+                    "xp": 50,
+                    "estimated_time_days": 1,
+                    "notes": null
+                }
+            ]
+        },
+        "self_employed": {
+            "basis_label": "Self-Employed / Business",
+            "basis_steps": [
+                {
+                    "step_id": "de_basis_gewerbe",
+                    "title": "Business Registration (Gewerbeanmeldung)",
+                    "deadline": null,
+                    "authority": "Trade Office (Gewerbeamt)",
+                    "requirements": [
+                        "ID/Passport",
+                        "Anmeldung",
+                        "Fee (approx. €20-60)"
+                    ],
+                    "outcome": "Trade License (Gewerbeschein)",
+                    "dependencies": [
+                        "de_address_reg"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 1,
+                    "notes": "Not required for 'Freiberufler' (liberal professions)."
+                }
+            ]
+        },
+        "student": {
+            "basis_label": "Student",
+            "basis_steps": [
+                {
+                    "step_id": "de_basis_student",
+                    "title": "University Enrollment (Immatrikulation)",
+                    "deadline": null,
+                    "authority": "University",
+                    "requirements": [
+                        "Letter of Admission",
+                        "Proof of health insurance",
+                        "Payment of semester fee"
+                    ],
+                    "outcome": "Student ID and Enrollment Certificate",
+                    "dependencies": [
+                        "de_health_insurance"
+                    ],
+                    "xp": 80,
+                    "estimated_time_days": 1,
+                    "notes": null
+                }
+            ]
+        },
+        "sufficient_resources": {
+            "basis_label": "Sufficient Resources",
+            "basis_steps": [
+                {
+                    "step_id": "de_basis_resources",
+                    "title": "Proof of Secure Livelihood",
+                    "deadline": null,
+                    "authority": "Immigration Office (Ausländerbehörde)",
+                    "requirements": [
+                        "Bank statements",
+                        "Comprehensive health insurance"
+                    ],
+                    "outcome": "Confirmed right of residence",
+                    "dependencies": [
+                        "de_health_insurance"
+                    ],
+                    "xp": 80,
+                    "estimated_time_days": 1,
+                    "notes": null
+                }
+            ]
+        },
+        "family": {
+            "basis_label": "Family Member",
+            "basis_steps": [
+                {
+                    "step_id": "de_basis_family",
+                    "title": "Proof of Kinship",
+                    "deadline": null,
+                    "authority": "Standesamt / Ausländerbehörde",
+                    "requirements": [
+                        "Marriage certificate or birth certificate",
+                        "ID of family member already in Germany"
+                    ],
+                    "outcome": "Family residence validation",
+                    "dependencies": [
+                        "de_address_reg"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 14,
+                    "notes": null
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "country_id": "IT",
+    "exit_steps": [
+        {
+            "step_id": "it_exit_aire",
+            "title": "AIRE Registration (Anagrafe degli Italiani Residenti all'Estero)",
+            "deadline": "90 days after moving",
+            "authority": "Italian Consulate",
+            "requirements": [
+                "Proof of residence in destination country (e.g., Meldunek certificate)",
+                "Valid Italian ID or Passport",
+                "AIRE application form (Fast It portal)"
+            ],
+            "outcome": "Registration in AIRE database and transfer of residency from Italy",
+            "dependencies": [],
+            "xp": 100,
+            "estimated_time_days": 180,
+            "notes": "Ensures access to consular services and avoids double taxation. Processing time is usually long but registration is effective from the date of application."
+        }
+    ]
+}

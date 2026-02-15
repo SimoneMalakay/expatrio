@@ -1,0 +1,36 @@
+{
+    "country_id": "NL",
+    "exit_steps": [
+        {
+            "step_id": "nl_exit_uitschrijven",
+            "title": "Uitschrijven (Deregistration)",
+            "deadline": "Within 5 days before departure",
+            "authority": "Municipality (Gemeente)",
+            "requirements": [
+                "ID or Passport",
+                "New address abroad"
+            ],
+            "outcome": "Removal from the BRP (Personal Records Database)",
+            "dependencies": [],
+            "xp": 100,
+            "estimated_time_days": 1,
+            "notes": "Your municipality will automatically inform other government agencies of your move."
+        },
+        {
+            "step_id": "nl_exit_insurance_cancel",
+            "title": "Health Insurance Cancellation",
+            "deadline": null,
+            "authority": "Insurance Provider",
+            "requirements": [
+                "Proof of deregistration or proof of new insurance in Poland"
+            ],
+            "outcome": "Termination of Dutch health insurance",
+            "dependencies": [
+                "nl_exit_uitschrijven"
+            ],
+            "xp": 50,
+            "estimated_time_days": 1,
+            "notes": "Do not cancel until you have your new insurance or deregistration ready."
+        }
+    ]
+}

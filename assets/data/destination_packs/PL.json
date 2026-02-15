@@ -1,0 +1,187 @@
+{
+    "country_id": "PL",
+    "duration": "more_than_90_days",
+    "common_steps": [
+        {
+            "step_id": "pl_enter_id",
+            "title": "Enter Poland with Valid ID",
+            "deadline": null,
+            "authority": "Border Guard",
+            "requirements": [
+                "Valid EU/EEA/CH Passport or National ID card"
+            ],
+            "outcome": "Legal entry into Poland",
+            "dependencies": [],
+            "xp": 10,
+            "estimated_time_days": 0,
+            "notes": null
+        },
+        {
+            "step_id": "pl_address_reg",
+            "title": "Address Registration (Meldunek)",
+            "deadline": "30 days after arrival",
+            "authority": "Municipal Office (Urząd Miasta/Gminy)",
+            "requirements": [
+                "Valid ID card or Passport",
+                "Rental contract or proof of ownership",
+                "Application form"
+            ],
+            "outcome": "Registration Confirmation (Polświadczenie zameldowania)",
+            "dependencies": [
+                "pl_enter_id"
+            ],
+            "xp": 30,
+            "estimated_time_days": 1,
+            "notes": "Required for many administrative tasks in Poland."
+        },
+        {
+            "step_id": "pl_obtain_pesel",
+            "title": "Obtain PESEL Number",
+            "deadline": null,
+            "authority": "Municipal Office (Urząd Miasta/Gminy)",
+            "requirements": [
+                "Valid ID card or Passport",
+                "Meldunek registration or proof of legal stay"
+            ],
+            "outcome": "PESEL Number Certificate",
+            "dependencies": [
+                "pl_address_reg"
+            ],
+            "xp": 50,
+            "estimated_time_days": 1,
+            "notes": "PESEL is the national identification number used for taxes and healthcare."
+        },
+        {
+            "step_id": "pl_eu_reg_cert",
+            "title": "EU Residence Registration Certificate",
+            "deadline": "90 days after arrival",
+            "authority": "Voivodeship Office (Urząd Wojewódzki)",
+            "requirements": [
+                "Common application form",
+                "Valid ID card or Passport",
+                "Proof of legal stay basis (contract, admission, etc.)"
+            ],
+            "outcome": "Certificate of Registration of Residence",
+            "dependencies": [
+                "pl_obtain_pesel"
+            ],
+            "xp": 150,
+            "estimated_time_days": 60,
+            "notes": "Mandatory for stays longer than 3 months."
+        }
+    ],
+    "residency_bases": {
+        "employment": {
+            "basis_label": "Employment",
+            "basis_steps": [
+                {
+                    "step_id": "pl_basis_employment",
+                    "title": "Proof of Employment",
+                    "deadline": null,
+                    "authority": "Voivodeship Office (Urząd Wojewódzki)",
+                    "requirements": [
+                        "Employment contract (signed)",
+                        "Employer's written declaration"
+                    ],
+                    "outcome": "Employment-based residency validation",
+                    "dependencies": [
+                        "pl_eu_reg_cert"
+                    ],
+                    "xp": 50,
+                    "estimated_time_days": 1,
+                    "notes": null
+                }
+            ]
+        },
+        "self_employed": {
+            "basis_label": "Self-Employed / Business",
+            "basis_steps": [
+                {
+                    "step_id": "pl_basis_ceidg",
+                    "title": "Business Registration (CEIDG)",
+                    "deadline": null,
+                    "authority": "Ministry of Development and Technology",
+                    "requirements": [
+                        "PESEL number",
+                        "Proof of business address",
+                        "Business code identification (PKD)"
+                    ],
+                    "outcome": "Entry in the CEIDG Registry",
+                    "dependencies": [
+                        "pl_obtain_pesel"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 3,
+                    "notes": "Allows you to operate as a sole trader in Poland."
+                }
+            ]
+        },
+        "student": {
+            "basis_label": "Student",
+            "basis_steps": [
+                {
+                    "step_id": "pl_basis_student",
+                    "title": "Admission and Health Coverage",
+                    "deadline": null,
+                    "authority": "Voivodeship Office / University",
+                    "requirements": [
+                        "Admission certificate from university",
+                        "Proof of sufficient financial resources (bank statement)",
+                        "Health insurance coverage (NFZ or private)"
+                    ],
+                    "outcome": "Student residency validation",
+                    "dependencies": [
+                        "pl_eu_reg_cert"
+                    ],
+                    "xp": 80,
+                    "estimated_time_days": 7,
+                    "notes": null
+                }
+            ]
+        },
+        "sufficient_resources": {
+            "basis_label": "Sufficient Resources",
+            "basis_steps": [
+                {
+                    "step_id": "pl_basis_resources",
+                    "title": "Proof of Financial Independence",
+                    "deadline": null,
+                    "authority": "Voivodeship Office (Urząd Wojewódzki)",
+                    "requirements": [
+                        "Bank statements proving sufficient funds",
+                        "Comprehensive health insurance policy"
+                    ],
+                    "outcome": "Economically inactive residency validation",
+                    "dependencies": [
+                        "pl_eu_reg_cert"
+                    ],
+                    "xp": 80,
+                    "estimated_time_days": 7,
+                    "notes": "Funds must be enough to not use social assistance."
+                }
+            ]
+        },
+        "family": {
+            "basis_label": "Family Member",
+            "basis_steps": [
+                {
+                    "step_id": "pl_basis_family",
+                    "title": "Proof of Relationship",
+                    "deadline": null,
+                    "authority": "Voivodeship Office (Urząd Wojewódzki)",
+                    "requirements": [
+                        "Civil status documents (Marriage/Birth certificates)",
+                        "Confirmation of sponsor's legal stay in Poland"
+                    ],
+                    "outcome": "Family-based residency validation",
+                    "dependencies": [
+                        "eu_reg_cert"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 21,
+                    "notes": null
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "country_id": "DE",
+    "exit_steps": [
+        {
+            "step_id": "de_exit_abmeldung",
+            "title": "Abmeldung (Deregistration)",
+            "deadline": "Between 7 days before and 14 days after moving",
+            "authority": "Bürgeramt",
+            "requirements": [
+                "ID or Passport",
+                "Abmeldung form"
+            ],
+            "outcome": "Abmeldebestätigung (Deregistration certificate)",
+            "dependencies": [],
+            "xp": 100,
+            "estimated_time_days": 1,
+            "notes": "Crucial for cancelling contracts like gym memberships, utilities, and insurance."
+        },
+        {
+            "step_id": "de_exit_insurance_cancel",
+            "title": "Health Insurance Cancellation",
+            "deadline": "As soon as Abmeldung is received",
+            "authority": "Krankenkasse",
+            "requirements": [
+                "Abmeldebestätigung",
+                "Proof of new insurance in destination country"
+            ],
+            "outcome": "Termination of health insurance policy",
+            "dependencies": [
+                "de_exit_abmeldung"
+            ],
+            "xp": 50,
+            "estimated_time_days": 7,
+            "notes": "You cannot cancel your insurance without proof of deregistration or new insurance."
+        }
+    ]
+}

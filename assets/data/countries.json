@@ -1,0 +1,226 @@
+[
+  {
+    "country_id": "AT",
+    "name": "Austria",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "BE",
+    "name": "Belgium",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "BG",
+    "name": "Bulgaria",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "HR",
+    "name": "Croatia",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "CY",
+    "name": "Cyprus",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "CZ",
+    "name": "Czechia",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "DK",
+    "name": "Denmark",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "EE",
+    "name": "Estonia",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "FI",
+    "name": "Finland",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "FR",
+    "name": "France",
+    "bloc": "EU",
+    "has_exit_pack": true,
+    "has_destination_pack": true
+  },
+  {
+    "country_id": "DE",
+    "name": "Germany",
+    "bloc": "EU",
+    "has_exit_pack": true,
+    "has_destination_pack": true
+  },
+  {
+    "country_id": "GR",
+    "name": "Greece",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "HU",
+    "name": "Hungary",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "IE",
+    "name": "Ireland",
+    "bloc": "EU",
+    "has_exit_pack": true,
+    "has_destination_pack": true
+  },
+  {
+    "country_id": "IT",
+    "name": "Italy",
+    "bloc": "EU",
+    "has_exit_pack": true,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "LV",
+    "name": "Latvia",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "LT",
+    "name": "Lithuania",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "LU",
+    "name": "Luxembourg",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "MT",
+    "name": "Malta",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "NL",
+    "name": "Netherlands",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "PL",
+    "name": "Poland",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": true
+  },
+  {
+    "country_id": "PT",
+    "name": "Portugal",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "RO",
+    "name": "Romania",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "SK",
+    "name": "Slovakia",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "SI",
+    "name": "Slovenia",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "ES",
+    "name": "Spain",
+    "bloc": "EU",
+    "has_exit_pack": true,
+    "has_destination_pack": true
+  },
+  {
+    "country_id": "SE",
+    "name": "Sweden",
+    "bloc": "EU",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "IS",
+    "name": "Iceland",
+    "bloc": "EEA",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "LI",
+    "name": "Liechtenstein",
+    "bloc": "EEA",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "NO",
+    "name": "Norway",
+    "bloc": "EEA",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "CH",
+    "name": "Switzerland",
+    "bloc": "CH",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  },
+  {
+    "country_id": "GB",
+    "name": "United Kingdom",
+    "bloc": "UK",
+    "has_exit_pack": false,
+    "has_destination_pack": false
+  }
+]

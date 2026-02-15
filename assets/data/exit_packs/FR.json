@@ -1,0 +1,35 @@
+{
+    "country_id": "FR",
+    "exit_steps": [
+        {
+            "step_id": "fr_exit_impots",
+            "title": "Tax Office Notification (Départ à l'étranger)",
+            "deadline": "Following January/February when declaring previous year's taxes",
+            "authority": "Direction Générale des Finances Publiques (DGFiP)",
+            "requirements": [
+                "Notification via personal space on impots.gouv.fr",
+                "New address in Poland"
+            ],
+            "outcome": "Update of tax residency status",
+            "dependencies": [],
+            "xp": 50,
+            "estimated_time_days": 1,
+            "notes": "You must inform your local tax office of your move even if you leave mid-year."
+        },
+        {
+            "step_id": "fr_exit_consulat_reg",
+            "title": "Registration in the World Register of French Nationals",
+            "deadline": null,
+            "authority": "French Consulate",
+            "requirements": [
+                "Passport / ID",
+                "Proof of residence in Poland"
+            ],
+            "outcome": "Consular registration certificate",
+            "dependencies": [],
+            "xp": 100,
+            "estimated_time_days": 1,
+            "notes": "Eases administrative procedures abroad and allows participation in French elections from Poland."
+        }
+    ]
+}

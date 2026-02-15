@@ -1,0 +1,168 @@
+{
+    "country_id": "FR",
+    "duration": "more_than_90_days",
+    "common_steps": [
+        {
+            "step_id": "fr_enter_id",
+            "title": "Enter France with Valid ID",
+            "deadline": null,
+            "authority": "Police aux Frontières",
+            "requirements": [
+                "Valid EU/EEA/CH Passport or National ID card"
+            ],
+            "outcome": "Legal entry into France",
+            "dependencies": [],
+            "xp": 10,
+            "estimated_time_days": 0,
+            "notes": null
+        },
+        {
+            "step_id": "fr_social_security",
+            "title": "Register for Social Security (Numéro de Sécurité Sociale)",
+            "deadline": "After 3 months of residence",
+            "authority": "Assurance Maladie (CPAM)",
+            "requirements": [
+                "Passport / ID Card",
+                "Birth certificate (translated)",
+                "Proof of residence (Justificatif de domicile)",
+                "RIB (French Bank Account Details)"
+            ],
+            "outcome": "Social Security Number and Carte Vitale",
+            "dependencies": [
+                "fr_enter_id"
+            ],
+            "xp": 100,
+            "estimated_time_days": 90,
+            "notes": "Essential for healthcare reimbursement. Can be requested earlier if working."
+        },
+        {
+            "step_id": "fr_residence_declaration",
+            "title": "Optional Right of Abode Declaration",
+            "deadline": null,
+            "authority": "Préfecture",
+            "requirements": [
+                "Proof of citizenship",
+                "Proof of status (contract, student card, etc.)"
+            ],
+            "outcome": "Carte de Séjour (Optional for EU citizens)",
+            "dependencies": [
+                "fr_enter_id"
+            ],
+            "xp": 50,
+            "estimated_time_days": 60,
+            "notes": "EU citizens are not required to hold a residence permit but can request one."
+        }
+    ],
+    "residency_bases": {
+        "employment": {
+            "basis_label": "Employment",
+            "basis_steps": [
+                {
+                    "step_id": "fr_basis_employment",
+                    "title": "Employment Contract Confirmation",
+                    "deadline": null,
+                    "authority": "Employer / URSSAF",
+                    "requirements": [
+                        "Directly provided by employer"
+                    ],
+                    "outcome": "Employment-based healthcare eligibility",
+                    "dependencies": [
+                        "fr_social_security"
+                    ],
+                    "xp": 50,
+                    "estimated_time_days": 1,
+                    "notes": null
+                }
+            ]
+        },
+        "self_employed": {
+            "basis_label": "Self-Employed (Auto-entrepreneur)",
+            "basis_steps": [
+                {
+                    "step_id": "fr_basis_autoentrepreneur",
+                    "title": "Business Registration",
+                    "deadline": null,
+                    "authority": "URSSAF / INPI",
+                    "requirements": [
+                        "Passport / ID",
+                        "Proof of address",
+                        "Social security number"
+                    ],
+                    "outcome": "SIRET Number",
+                    "dependencies": [
+                        "fr_social_security"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 14,
+                    "notes": "Quick online process via Guichet Unique."
+                }
+            ]
+        },
+        "student": {
+            "basis_label": "Student",
+            "basis_steps": [
+                {
+                    "step_id": "fr_basis_student",
+                    "title": "University Registration",
+                    "deadline": null,
+                    "authority": "University (Crous / Campus France)",
+                    "requirements": [
+                        "Admission certificate",
+                        "Proof of CVEC payment",
+                        "Student health insurance registration"
+                    ],
+                    "outcome": "Certificat de scolarité",
+                    "dependencies": [
+                        "fr_social_security"
+                    ],
+                    "xp": 80,
+                    "estimated_time_days": 7,
+                    "notes": null
+                }
+            ]
+        },
+        "sufficient_resources": {
+            "basis_label": "Sufficient Resources",
+            "basis_steps": [
+                {
+                    "step_id": "fr_basis_resources",
+                    "title": "Proof of Financial Stability",
+                    "deadline": null,
+                    "authority": "CPAM / Préfecture",
+                    "requirements": [
+                        "Bank statements",
+                        "S1 form or private health insurance"
+                    ],
+                    "outcome": "PUMA healthcare eligibility",
+                    "dependencies": [
+                        "fr_social_security"
+                    ],
+                    "xp": 80,
+                    "estimated_time_days": 30,
+                    "notes": null
+                }
+            ]
+        },
+        "family": {
+            "basis_label": "Family Member",
+            "basis_steps": [
+                {
+                    "step_id": "fr_basis_family",
+                    "title": "Proof of Family Link",
+                    "deadline": null,
+                    "authority": "Préfecture",
+                    "requirements": [
+                        "Livret de famille or Marriage/Birth certificate"
+                    ],
+                    "outcome": "Right to reside as family member",
+                    "dependencies": [
+                        "fr_enter_id"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 30,
+                    "notes": null
+                }
+            ]
+        }
+    }
+}

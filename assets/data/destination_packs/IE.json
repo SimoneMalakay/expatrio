@@ -1,0 +1,168 @@
+{
+    "country_id": "IE",
+    "duration": "more_than_90_days",
+    "common_steps": [
+        {
+            "step_id": "ie_enter_id",
+            "title": "Enter Ireland with Valid ID",
+            "deadline": null,
+            "authority": "Garda National Immigration Bureau",
+            "requirements": [
+                "Valid EU/EEA/CH Passport or National ID card"
+            ],
+            "outcome": "Legal entry into Ireland",
+            "dependencies": [],
+            "xp": 10,
+            "estimated_time_days": 0,
+            "notes": "Common Travel Area (CTA) rules apply for UK citizens."
+        },
+        {
+            "step_id": "ie_ppsn",
+            "title": "Obtain PPS Number (PPSN)",
+            "deadline": null,
+            "authority": "Department of Social Protection (DSP)",
+            "requirements": [
+                "Passport / ID",
+                "Evidence of why you need a PPSN (e.g., job offer)",
+                "Proof of Irish address"
+            ],
+            "outcome": "Personal Public Service (PPS) Number",
+            "dependencies": [
+                "ie_enter_id"
+            ],
+            "xp": 80,
+            "estimated_time_days": 14,
+            "notes": "Necessary for work, tax, and social services."
+        },
+        {
+            "step_id": "ie_psc",
+            "title": "Public Services Card (PSC)",
+            "deadline": null,
+            "authority": "Intreo Centre / DSP",
+            "requirements": [
+                "Passport / ID",
+                "PPSN confirmation"
+            ],
+            "outcome": "Public Services Card",
+            "dependencies": [
+                "ie_ppsn"
+            ],
+            "xp": 20,
+            "estimated_time_days": 10,
+            "notes": "Recommended for identity verification across government services."
+        }
+    ],
+    "residency_bases": {
+        "employment": {
+            "basis_label": "Employment",
+            "basis_steps": [
+                {
+                    "step_id": "ie_basis_employment",
+                    "title": "Revenue Registration (MyAccount)",
+                    "deadline": null,
+                    "authority": "Revenue Commissioners",
+                    "requirements": [
+                        "PPSN",
+                        "Employment details"
+                    ],
+                    "outcome": "Registered for PAYE tax",
+                    "dependencies": [
+                        "ie_ppsn"
+                    ],
+                    "xp": 50,
+                    "estimated_time_days": 2,
+                    "notes": "Ensures you are on the correct tax code and not emergency tax."
+                }
+            ]
+        },
+        "self_employed": {
+            "basis_label": "Self-Employed",
+            "basis_steps": [
+                {
+                    "step_id": "ie_basis_self_employed",
+                    "title": "Business Tax Registration",
+                    "deadline": null,
+                    "authority": "Revenue Commissioners",
+                    "requirements": [
+                        "PPSN",
+                        "Form TR1 (Tax Registration)"
+                    ],
+                    "outcome": "Tax registration for self-assessment",
+                    "dependencies": [
+                        "ie_ppsn"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 10,
+                    "notes": null
+                }
+            ]
+        },
+        "student": {
+            "basis_label": "Student",
+            "basis_steps": [
+                {
+                    "step_id": "ie_basis_student",
+                    "title": "Academic Enrollment & Insurance",
+                    "deadline": null,
+                    "authority": "Educational Institution (HEI)",
+                    "requirements": [
+                        "Confirmation of enrollment in a recognized course",
+                        "Health insurance (EHIC or private policy)"
+                    ],
+                    "outcome": "Student residence validation",
+                    "dependencies": [
+                        "ie_enter_id"
+                    ],
+                    "xp": 80,
+                    "estimated_time_days": 1,
+                    "notes": null
+                }
+            ]
+        },
+        "sufficient_resources": {
+            "basis_label": "Sufficient Resources",
+            "basis_steps": [
+                {
+                    "step_id": "ie_basis_resources",
+                    "title": "Proof of Financial Independence",
+                    "deadline": null,
+                    "authority": "Department of Justice",
+                    "requirements": [
+                        "Comprehensive health insurance (private)",
+                        "Bank statements proving self-sufficiency"
+                    ],
+                    "outcome": "Valid right to reside as self-sufficient",
+                    "dependencies": [
+                        "ie_enter_id"
+                    ],
+                    "xp": 80,
+                    "estimated_time_days": 1,
+                    "notes": "You must not become an unreasonable burden on the social assistance system."
+                }
+            ]
+        },
+        "family": {
+            "basis_label": "Family Member",
+            "basis_steps": [
+                {
+                    "step_id": "ie_basis_family",
+                    "title": "Family Link Proof",
+                    "deadline": null,
+                    "authority": "Department of Justice",
+                    "requirements": [
+                        "Marriage or Civil Partnership certificate",
+                        "Birth certificates for children",
+                        "Proof of cohabitation if de facto"
+                    ],
+                    "outcome": "Family residence validation",
+                    "dependencies": [
+                        "ie_enter_id"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 30,
+                    "notes": null
+                }
+            ]
+        }
+    }
+}

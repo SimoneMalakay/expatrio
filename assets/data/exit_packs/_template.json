@@ -1,0 +1,36 @@
+{
+    "_comment_header": "This is a template for an Exit Pack. Rename this file to [country_id].json to use it.",
+    "country_id": "XX",
+    "_comment_exit": "Steps required to legally or administratively 'leave' the home country (e.g., tax notification, embassy registration).",
+    "exit_steps": [
+        {
+            "step_id": "xx_exit_consulate_reg",
+            "title": "Home Country Consulate Registration",
+            "deadline": "90 days after moving",
+            "authority": "Ministry of Foreign Affairs / Consulate",
+            "requirements": [
+                "Proof of residence in destination country",
+                "Original ID/Passport"
+            ],
+            "outcome": "Registration in Overseas Citizen Database",
+            "dependencies": [],
+            "xp": 100,
+            "estimated_time_days": 1,
+            "notes": "Many countries require this for voting or tax purposes."
+        },
+        {
+            "step_id": "xx_exit_tax_notif",
+            "title": "Tax Authority Notification",
+            "deadline": "Before departure",
+            "authority": "National Tax Agency",
+            "requirements": [
+                "Departure form"
+            ],
+            "outcome": "Non-resident tax status",
+            "dependencies": [],
+            "xp": 50,
+            "estimated_time_days": 1,
+            "notes": "Failure to notify may result in double taxation."
+        }
+    ]
+}

@@ -1,0 +1,193 @@
+{
+    "country_id": "ES",
+    "duration": "more_than_90_days",
+    "common_steps": [
+        {
+            "step_id": "es_enter_id",
+            "title": "Enter Spain with Valid ID",
+            "deadline": null,
+            "authority": "Policía Nacional",
+            "requirements": [
+                "Valid EU/EEA/CH Passport or National ID card"
+            ],
+            "outcome": "Legal entry into Spain",
+            "dependencies": [],
+            "xp": 10,
+            "estimated_time_days": 0,
+            "notes": null
+        },
+        {
+            "step_id": "es_nie",
+            "title": "Obtain NIE (Número de Identidad de Extranjero)",
+            "deadline": null,
+            "authority": "Policía Nacional / Oficina de Extranjería",
+            "requirements": [
+                "Passport / ID",
+                "Form EX-15",
+                "Proof of reason for request",
+                "Fee payment (Model 790)"
+            ],
+            "outcome": "NIE Number Assigned",
+            "dependencies": [
+                "es_enter_id"
+            ],
+            "xp": 50,
+            "estimated_time_days": 15,
+            "notes": "Necessary for all economic and administrative interactions in Spain."
+        },
+        {
+            "step_id": "es_empadronamiento",
+            "title": "Address Registration (Empadronamiento)",
+            "deadline": null,
+            "authority": "Town Hall (Ayuntamiento)",
+            "requirements": [
+                "Passport / ID",
+                "Rental contract or utility bill in your name",
+                "Application form"
+            ],
+            "outcome": "Certificado de Empadronamiento",
+            "dependencies": [
+                "es_enter_id"
+            ],
+            "xp": 30,
+            "estimated_time_days": 1,
+            "notes": "Essential for accessing healthcare and local services."
+        },
+        {
+            "step_id": "es_eu_registration",
+            "title": "EU Citizen Registry (Certificado de Registro de Ciudadano de la UE)",
+            "deadline": "90 days after arrival",
+            "authority": "Oficina de Extranjería / Policía",
+            "requirements": [
+                "Passport / ID",
+                "Form EX-18",
+                "Empadronamiento",
+                "Proof of status (employment, student, etc.)",
+                "Fee payment"
+            ],
+            "outcome": "Green card/A4 Residence Certificate",
+            "dependencies": [
+                "es_nie",
+                "es_empadronamiento"
+            ],
+            "xp": 150,
+            "estimated_time_days": 30,
+            "notes": "This is the actual residence certificate for EU citizens."
+        }
+    ],
+    "residency_bases": {
+        "employment": {
+            "basis_label": "Employment",
+            "basis_steps": [
+                {
+                    "step_id": "es_basis_employment",
+                    "title": "Social Security Number (NAF)",
+                    "deadline": null,
+                    "authority": "Tesorería General de la Seguridad Social",
+                    "requirements": [
+                        "Passport / ID",
+                        "Employment contract",
+                        "NIE (if available)"
+                    ],
+                    "outcome": "Social Security Number",
+                    "dependencies": [
+                        "es_nie"
+                    ],
+                    "xp": 50,
+                    "estimated_time_days": 1,
+                    "notes": "Often your employer will handle this on your first day."
+                }
+            ]
+        },
+        "self_employed": {
+            "basis_label": "Self-Employed (Autónomo)",
+            "basis_steps": [
+                {
+                    "step_id": "es_basis_autonomo",
+                    "title": "Business and Tax Registration",
+                    "deadline": null,
+                    "authority": "Agencia Tributaria (Hacienda) & Seguridad Social",
+                    "requirements": [
+                        "NIE",
+                        "Bank account",
+                        "Tax forms (036/037)"
+                    ],
+                    "outcome": "Alta in the RETA registry",
+                    "dependencies": [
+                        "es_nie"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 3,
+                    "notes": null
+                }
+            ]
+        },
+        "student": {
+            "basis_label": "Student",
+            "basis_steps": [
+                {
+                    "step_id": "es_basis_student",
+                    "title": "Academic Enrollment & Insurance",
+                    "deadline": null,
+                    "authority": "University / Health Center",
+                    "requirements": [
+                        "Proof of enrollment in recognized center",
+                        "European Health Insurance Card (EHIC) or private policy",
+                        "Sworn statement of financial means"
+                    ],
+                    "outcome": "Student residence validation",
+                    "dependencies": [
+                        "es_eu_registration"
+                    ],
+                    "xp": 80,
+                    "estimated_time_days": 1,
+                    "notes": null
+                }
+            ]
+        },
+        "sufficient_resources": {
+            "basis_label": "Sufficient Resources",
+            "basis_steps": [
+                {
+                    "step_id": "es_basis_resources",
+                    "title": "Proof of Means and Health Insurance",
+                    "deadline": null,
+                    "authority": "Oficina de Extranjería",
+                    "requirements": [
+                        "Bank balance proof (approx. €6000+)",
+                        "Comprehensive health insurance with no copays"
+                    ],
+                    "outcome": "Residency right validation",
+                    "dependencies": [
+                        "es_eu_registration"
+                    ],
+                    "xp": 80,
+                    "estimated_time_days": 1,
+                    "notes": null
+                }
+            ]
+        },
+        "family": {
+            "basis_label": "Family Member",
+            "basis_steps": [
+                {
+                    "step_id": "es_basis_family",
+                    "title": "Family Link Documentation",
+                    "deadline": null,
+                    "authority": "Registro Civil",
+                    "requirements": [
+                        "Marriage certificate or Pareja de Hecho registry",
+                        "Apostilled/Legalized certificates if non-EU"
+                    ],
+                    "outcome": "Family residence validation",
+                    "dependencies": [
+                        "es_eu_registration"
+                    ],
+                    "xp": 100,
+                    "estimated_time_days": 14,
+                    "notes": null
+                }
+            ]
+        }
+    }
+}
